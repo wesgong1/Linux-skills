@@ -1,0 +1,29 @@
+To create a user account 
+addusser name
+
+To find file auth.log
+find / -name auth.log
+
+To create a directory called lab  in your home directory
+mkdir lab
+
+To copy the contents of auth.log and redirect it to the folder name lab into a filed called labdata.txt
+cp /var/log/auth.log ~/lab/labdata.txt
+
+List all system processes running on linux box and direct the output into a file called process.txt in lab folder
+ps -A > process.txt 
+Can also start a script file through script process.txt then ps -A or top cmnd line. exit when done
+
+Copy the first line from labdata.txt and process.txt into a new file called combined.txt in one line
+head -n 1 labdata.txt process.txt >> combined.txt
+
+Using one command to install apache2, mysql-server and nmap
+sudo apt-get update 
+sudo apt-get install apache2 mysql-server nmap
+
+Using nmap to perform a quick scan of all the servers in your /24 subnet your vm is in and redirect that outputinto a file called scan.txt in lab
+nmap 54.198.186.106/24 > scan.txt
+
+Replace default apache webpage with a webpage from a popular website using two commands
+wget google.com
+cp ~/lab/index.html /var/www/html/index.html (to get change permission sudo chown -R ubuntu /var/www
