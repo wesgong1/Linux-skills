@@ -1,0 +1,27 @@
+Download database
+sudo curl -O https://downloads.mysql.com/docs/world.sql.zip
+
+Unzip the zip file containing the database
+sudo apt-get install unzip
+sudo unzip world.sql.zip
+
+Access MySql shell
+mysql -u root -p
+
+Import the database to mysql
+SOURCE ~/lab/world.sql;
+
+Access database
+USE world;
+
+To see current tables
+SHOW tables;
+
+To see values in specific columns
+SELECT * FROM column
+
+Update the value in the database from Oakland to The Town
+UPDATE city SET Name = 'The Town' where ID = 3833;
+
+List all cities associated with California using a select command
+SELECT Name FROM city WHERE District = 'California';
